@@ -1,0 +1,59 @@
+---
+// Invitacion.astro - La invitación completa.
+// La usan index.astro (sin pases) y [pase].astro (/pase=1 ... /pase=5).
+// Si no recibe "pases", la sección de pases no se muestra.
+import Layout from "../layouts/Layout.astro";
+import Portada from "./Portada.astro";
+import NombresFlores from "./NombresFlores.astro";
+import Dedicatoria from "./Dedicatoria.astro";
+import Bendicion from "./Bendicion.astro";
+import NombrePadres from "./NombresPadres.astro";
+import Fecha from "./Fecha.astro";
+import Contador from "./Contador.astro";
+import Foto2 from "./Foto2.astro";
+import DireccionCeremonia from "./DireccionCeremonia.astro";
+import DireccionRecepcion from "./DireccionRecepcion.astro";
+import Itinerario from "./Itinerario.astro";
+import Reservas from "./Reservas.astro";
+import CodigoVestimenta from "./CodigoVestimenta.astro";
+import Confirmar from "./Confirmar.astro";
+import DespedidaDedicatoria from "./DespedidaDedicatoria.astro";
+import Foto4 from "./Foto4.astro";
+import Foto3 from "./foto3.astro";
+import Des from "./Des.astro";
+import Galeria from "./Galeria.astro";
+
+interface Props {
+    pases?: number;
+}
+
+const { pases } = Astro.props;
+---
+
+<Layout title="Nuestra Boda · Hector Hilton & Karla Danitza">
+    <!-- PORTADA (se muestra primero, bloquea scroll) -->
+    <Portada />
+
+    <!-- CONTENIDO PRINCIPAL (oculto hasta que se presione el sobre) -->
+    <div id="contenido-principal">
+        <NombresFlores />
+        <Dedicatoria />
+        <Bendicion />
+        <NombrePadres />
+        <Fecha />
+        <Contador />
+        <Foto2 />
+        <DireccionCeremonia />
+        <DireccionRecepcion />
+        <Foto3 />
+        <Itinerario />
+        {pases && <Reservas numeroPases={pases} />}
+        <CodigoVestimenta />
+        <Galeria />
+        <Confirmar />
+        <DespedidaDedicatoria />
+        <Foto4 />
+
+        <Des />
+    </div>
+</Layout>

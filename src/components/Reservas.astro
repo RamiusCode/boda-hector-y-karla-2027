@@ -67,7 +67,7 @@ const { numeroPases = 1, nombreInvitado = "" } = Astro.props;
                         <img
                             src="/iconos/reserva.png"
                             alt="Icono de reserva"
-                            class="w-full h-full object-contain relative z-10 transform transition-transform duration-300 hover:scale-110 verde-filter"
+                            class="w-full h-full object-contain relative z-10 transform transition-transform duration-300 hover:scale-110 rojo-filter"
                         />
                     </div>
                 </div>
@@ -705,9 +705,9 @@ const { numeroPases = 1, nombreInvitado = "" } = Astro.props;
 <!-- 🎨 ESTILOS PARA CONVERTIR IMÁGENES NEGRAS A DORADO          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 <style>
-    /* Filtro que convierte imágenes PNG negras al color dorado #9C7A2E */
-    .verde-filter {
-        filter: brightness(0) saturate(100%) invert(18%) sepia(42%)
-            saturate(525%) hue-rotate(115deg) brightness(78%) contrast(105%);
+    /* Filtro que convierte imágenes PNG negras al rojo #8B0A14 */
+    .rojo-filter {
+        filter: brightness(0) saturate(100%) invert(6%) sepia(97%)
+            saturate(5824%) hue-rotate(352deg) brightness(101%) contrast(96%);
     }
 </style>
